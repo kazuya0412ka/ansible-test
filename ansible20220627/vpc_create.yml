@@ -1,0 +1,8 @@
+# VPC CREATE Playbook
+- name: create vpc subnet igw routetable
+  hosts: target
+  connection: local
+  gather_facts: False
+  become: False
+  roles:
+    - aws_vpc

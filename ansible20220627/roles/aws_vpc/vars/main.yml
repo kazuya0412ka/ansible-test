@@ -1,0 +1,30 @@
+---
+# vars file for aws_vpc
+ 
+# REGION
+  region: "ap-northeast-1"
+ 
+# VPC
+  vpc_name: "ansible-test-vpc"
+  vpc_cidr: "10.0.0.0/16"
+ 
+# IGW
+  igw_name: "ansible-test-igw"
+ 
+# ROUTETABLE(PUBLIC)
+  rttable_pub_name: "ansible-test-pub-rt"
+ 
+# PUBLIC_SUBNET
+  pub_subnet:
+    - { pub_subnet_cidr: "10.0.10.0/24" ,subnet_az: "ap-northeast-1a" ,pub_subnet_name: "ansible-test-public-subnet-a" }
+    - { pub_subnet_cidr: "10.0.20.0/24" ,subnet_az: "ap-northeast-1c" ,pub_subnet_name: "ansible-test-public-subnet-c" }
+ 
+# PRIVATE_SUBNET
+  pri_subnet:
+    - { pri_subnet_cidr: "10.0.30.0/24" ,subnet_az: "ap-northeast-1a" ,pri_subnet_name: "ansible-test-private-subnet-a" }
+    - { pri_subnet_cidr: "10.0.40.0/24" ,subnet_az: "ap-northeast-1c" ,pri_subnet_name: "ansible-test-private-subnet-c" }
+ 
+# IGW に紐付けるサブネット
+  atache_igw_subnet:
+    - "10.0.10.0/24"
+    - "10.0.20.0/24"
