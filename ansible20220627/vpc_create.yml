@@ -2,7 +2,7 @@
 - name: create vpc subnet igw routetable
   hosts: target
   connection: local
-  gather_facts: False
+  gather_facts: true
   become: False
   roles:
     - aws_vpc
